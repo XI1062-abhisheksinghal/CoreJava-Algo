@@ -2,6 +2,8 @@ package com.practice.pattern;
 
 public class PyramidPattern {
 	
+	
+	//Pattern 1
 	/*
 	 *         *
 	 *        ***

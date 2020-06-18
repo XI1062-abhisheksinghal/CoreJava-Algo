@@ -22,14 +22,7 @@ public interface Pizza {
 	public void createPizza();
 	
 	public int getCost();
+	
     
-	 public default void createPizzaIngredients() {
-		
-		 Map<String, Integer> createIngredients = new HashMap();
-		 createIngredients.put("Capsicum", 10);
-		 createIngredients.put("Onion", 20);
-		 createIngredients.put("Chesse", 30);
-		 createIngredients.put("Panner", 40);
-		 
-	}
+	 
 }
