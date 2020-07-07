@@ -4,25 +4,24 @@ public class PrintAllStringSet {
 
 	public static void main(String args[]) {
 
-		String s = "abc";
+		//finding the frequency of each character in String 
+		
+	   String magazine = "hello";
+	   
+	   int[] fm= new int[26];
+	   for(char c: magazine.toCharArray()) {
+		   fm[c-'a']++;
+	   }
+	   
+	   for(int i=0;i<fm.length;i++) 
+	   
+	   if(fm[i]!=0) {
+		   System.out.println(fm[i]);
+	   }
 
-		String curr = "";
-
-		printpowerSetRecursion(s, 0, curr);
+		
 	}
 
-	public static void printpowerSetRecursion(String s, int index, String curr) {
-
-		int n = s.length();
-		if (index == n) {
-
-			System.out.println(curr);
-			return;
-		}
-
-		printpowerSetRecursion(s, index + 1, curr + s.charAt(index));
-		printpowerSetRecursion(s, index + 1, curr);
-
-	}
+	
 
 }

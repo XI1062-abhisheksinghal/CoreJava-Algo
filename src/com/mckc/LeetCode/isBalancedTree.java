@@ -1,5 +1,7 @@
 package com.mckc.LeetCode;
 
+import java.util.Stack;
+
 public class isBalancedTree {
 
 	static int rightheight = 0;
@@ -15,6 +17,7 @@ public class isBalancedTree {
 
 		Integer data;
 		Node left;
+		
 		Node right;
 
 		public Node() {
@@ -60,13 +63,15 @@ public class isBalancedTree {
 		int[] path = new int[1000];
 		int patlen = 0;
 
-		// printChainfromHeadtoLeaf( n,path,patlen);
+		 printChainfromHeadtoLeaf( n,path,patlen);
 		Node leaf = new Node(3);
 		findIfNodePresent(time,n, leaf);
 		// minTimetoBurnTree( n, leaf );
 		Node sib1= new Node(9);
 		Node sib2 = new Node(20);
 		//System.out.println(checkIfSibling(n,sib1,sib2));
+		
+		System.out.println(isSymmetricOrNot( n,  n));
 
 	}
 
@@ -266,6 +271,100 @@ public class isBalancedTree {
 		return false;
 		
 		
+		
+	}
+	
+	public static boolean isSymmetricOrNot(Node root1, Node root2) {
+		
+		if(root1== null && root2==null) {
+			return false;
+		}
+		
+		if(root1!=null && root2!=null && root1.data==root2.data )
+			return (isSymmetricOrNot(root1.left, root2.right) && isSymmetricOrNot(root1.right, root2.left));
+		
+		return false;
+	}
+	
+	public static boolean findSymmetricorNotusingiteration(Node root) {
+		
+		if(root==null)  return true;
+	    
+	    Stack<Node> stack = new Stack<Node>();
+	    Node left, right;
+	    if(root.left!=null){
+	        if(root.right==null) return false;
+	        stack.push(root.left);
+	        stack.push(root.right);
+	    }
+	    else if(root.right!=null){
+	        return false;
+	    }
+	        
+	    while(!stack.empty()){
+	        if(stack.size()%2!=0)   return false;
+	        right = stack.pop();
+	        left = stack.pop();
+	        if(right.data!=left.data) return false;
+	        
+	        if(left.left!=null){
+	            if(right.right==null)   return false;
+	            stack.push(left.left);
+	            stack.push(right.right);
+	        }
+	        else if(right.right!=null){
+	            return false;
+	        }
+	            
+	        if(left.right!=null){
+	            if(right.left==null)   return false;
+	            stack.push(left.right);
+	            stack.push(right.left);
+	        }
+	        else if(right.left!=null){
+	            return false;
+	        }
+	    }
+	    
+	    return true;
+			
+			
+	}
+	
+	public static void mirrorImageBinary(Node root) {
+		
+//	    3            Mirror image      3
+//	   / \                           /  \
+//	  9  20                         20   9 
+//	    /  \                       /\    
+//	   15   7                     7 15   
+//	         \
+ //	         10
+//	          \
+//	           15
+       if( root==null) {
+    	   return ;
+       }
+       
+       swap(root);
+       
+       mirrorImageBinary(root.left);
+       mirrorImageBinary(root.right);
+		
+		
+		
+	}
+	
+	public static void swap( Node root) {
+		
+		
+		if(root==null) {
+			return ;
+		}
+		Node temp ;
+		temp = root.left;
+		root.left= root.right;
+		root.right=temp;
 		
 	}
 	
