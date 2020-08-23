@@ -32,7 +32,9 @@ public class DutchNationalFlag {
 			
 		}
 		
-		Arrays.asList(prob).forEach((j)->System.out.println(j));
+		for(int x:prob) {
+			System.out.println(x);
+		}
 		
 	}
 
