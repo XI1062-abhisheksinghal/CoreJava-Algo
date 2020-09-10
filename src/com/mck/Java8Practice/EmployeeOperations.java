@@ -34,6 +34,7 @@ public class EmployeeOperations {
 		employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
 
 		
+		employeeList.stream().filter(i->i.age>20).collect(Collectors.toList());
 		
 		//How many Male and Female Employees are there in Org.
 		
@@ -81,6 +82,7 @@ public class EmployeeOperations {
 				
 				Map<String, List<Employee>> employeeListByDepartment=
 						employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+				
 						    
 				
 	}

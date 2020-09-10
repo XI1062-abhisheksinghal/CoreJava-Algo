@@ -16,6 +16,7 @@ public class PizzaDesign {
 		Pizza p = new CheesePizza(new BasicPizza());
 		
 		p.createPizza();
+		System.out.println(p.getCost());
 		System.out.println("============");
 		Pizza p1 = new OnionPizza(new CheesePizza(new BasicPizza()));
 		
@@ -25,6 +26,10 @@ public class PizzaDesign {
 		
 		System.out.println(totalcost);
 		
+		
+		Pizza p2 = new CapsicumPizza(new CheesePizza(new BasicPizza()));
+		p2.createPizza();
+		System.out.println(p2.getCost());
 		
 		
 	}
