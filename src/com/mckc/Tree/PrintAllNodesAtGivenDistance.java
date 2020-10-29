@@ -30,14 +30,14 @@ public class PrintAllNodesAtGivenDistance {
 		int k = 2;
 
 		printAllNodesAtDistance(n, k);
-		addinQueue(n);
+		//addinQueue(n);
 //		5
 //	   / \	
 //	  10 15
 //	 /    \
-//	20    30 
+//	35    30 
 //	/ \   /
-// 35 40 23 	
+//  40 23 	
 
 	}
 
@@ -67,7 +67,19 @@ public class PrintAllNodesAtGivenDistance {
 
 	public static void printAllNodesAtDistance(Node n, int k) {
 		// TODO Auto-generated method stub
+		if(n==null) {
+			return;
+		}
+		
+		if(k==0) {
+			System.out.println(n.data);
+		}
+		
+		printAllNodesAtDistance(n.left, k-1);
+		printAllNodesAtDistance(n.right, k-1);
 
 	}
+	
+	//if want to find the nodes at k distance from given node 
 
 }

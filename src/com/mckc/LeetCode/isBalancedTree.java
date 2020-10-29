@@ -65,7 +65,7 @@ public class isBalancedTree {
 
 		 printChainfromHeadtoLeaf( n,path,patlen);
 		Node leaf = new Node(3);
-		findIfNodePresent(time,n, leaf);
+	//	findIfNodePresent(time,n, leaf);
 		// minTimetoBurnTree( n, leaf );
 		Node sib1= new Node(9);
 		Node sib2 = new Node(20);

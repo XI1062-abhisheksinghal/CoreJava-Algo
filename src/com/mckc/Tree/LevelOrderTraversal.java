@@ -66,6 +66,7 @@ public class LevelOrderTraversal {
 //		}
 //		
 	//	printNodeAtkDistance(n, 2);
+		System.out.println(minDepth(n));
 		
 	}
 	//calculating nodes from root by decreasing the distance
@@ -199,6 +200,30 @@ public class LevelOrderTraversal {
 		
 		
 	}
-	
-	
+
+
+	public static int minDepth(Node root) {
+		if(root==null)
+			return 0;
+		int depth=0;
+		if(root.left!=null&&root.right!=null){
+			int lh=minDepth(root.left);
+			int rh=minDepth(root.right);
+			depth=Math.min(lh,rh);
+		}
+		else if(root.left!=null){
+			depth=minDepth(root.left);
+		}
+		else if(root.right!=null){
+			depth=minDepth(root.right);
+		}
+
+		return depth+1;
+
+
+	}
+
+
+
+
 }
