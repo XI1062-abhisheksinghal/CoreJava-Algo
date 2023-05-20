@@ -108,11 +108,6 @@ public class LevelOrderTraversal {
 	
 	
 	public static int heightOftree(Node n) {
-
-		
-		
-		
-		
 		if(n==null) {
 			return height;
 		}

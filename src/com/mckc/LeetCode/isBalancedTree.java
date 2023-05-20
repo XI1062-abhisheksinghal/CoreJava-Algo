@@ -250,11 +250,9 @@ public class isBalancedTree {
     //Check if two nodes are siblings 
 	
 	public static boolean checkIfSibling(Node root,Node sib1, Node sib2) {
-		
 		if(sib1==null || sib2==null) {
 			return false;
 		}
-		
 		if(root.left!=null || root.right!=null)
 		if(root.left.data== sib1.data || root.left.data==sib2.data) {
 			if( (root.right.data==sib1.data) || (root.right.data==sib2.data)) {
@@ -262,16 +260,12 @@ public class isBalancedTree {
 			}
 			return false;
 		}
-		
-		if(root.left!=null) 
+		if(root.left!=null)
 		 checkIfSibling(root.left,sib1, sib2);
 		if(root.right!=null)
 		checkIfSibling(root.right, sib1, sib2);
 		
 		return false;
-		
-		
-		
 	}
 	
 	public static boolean isSymmetricOrNot(Node root1, Node root2) {
@@ -345,19 +339,12 @@ public class isBalancedTree {
        if( root==null) {
     	   return ;
        }
-       
        swap(root);
-       
        mirrorImageBinary(root.left);
        mirrorImageBinary(root.right);
-		
-		
-		
 	}
 	
 	public static void swap( Node root) {
-		
-		
 		if(root==null) {
 			return ;
 		}

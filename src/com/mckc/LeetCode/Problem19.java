@@ -48,6 +48,7 @@ public class Problem19 {
 	public static void insertInLinkedList(int data) {
 
 		Node n = new Node(data);
+
 		if (head == null) {
 			head = n;
 		} else {

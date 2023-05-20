@@ -5,7 +5,7 @@ import java.util.List;
 
 
 
-public class Student {
+public class Student implements Comparable<Student> {
 	
 	@Override
 	public String toString() {
@@ -64,8 +64,16 @@ public class Student {
 		return name;
 		
 	}
-	
-	
-	
 
+
+	@Override
+	public int compareTo(Student o) {
+		int result = this.name.compareToIgnoreCase(o.name);
+		if(result==0) {
+			return Integer.valueOf(this.marks).compareTo(o.marks);
+		}
+		else {
+			return result;
+		}
+	}
 }

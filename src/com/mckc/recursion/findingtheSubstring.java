@@ -12,6 +12,7 @@ public class findingtheSubstring {
 
     }
 
+    //src :- https://www.youtube.com/channel/UCkuf0J8yRtrkbtg_ShcfzRQ
     public static void permute(String fixed, String unfixed){
 
         if(unfixed.length()==0){

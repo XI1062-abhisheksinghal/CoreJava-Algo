@@ -16,6 +16,38 @@ public class DeleteANodeInLinkedList {
 			
 		}
 	}
+
+	static public Node reverseKGroup(Node n,int k){
+
+		int len=0;
+		Node temp = n;
+		while(temp!=null){
+			len++;
+			temp=temp.next;
+		}
+
+		Node curr = n;
+		Node prev = null;
+		Node next =null;
+
+		int count=0;
+		while(count<k && curr!=null){
+			next=curr.next;
+			curr.next=prev;
+			prev=curr;
+			curr=next;
+			count++;
+		}
+
+		if(next!=null && (len-count)>k){
+			n.next= reverseKGroup(next,k);
+		}else{
+			n.next=next;
+		}
+		return prev;
+
+
+	}
 	
 	static public void  LinkedListPrint(Node n) {
 		
@@ -29,7 +61,7 @@ public class DeleteANodeInLinkedList {
 			System.out.println(current.value);
 			n = current.next;
 		}
-		
+
 		
 	}
 	
